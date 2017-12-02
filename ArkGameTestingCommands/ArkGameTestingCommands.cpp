@@ -72,9 +72,9 @@ void CustomGiveItem(APlayerController* aPlayerController, FString* cmd, bool bWr
 			std::string bpPathStr = bpPath.ToString();
 			if (!bpPathStr.empty())
 			{
-				wchar_t* bpPathWStr = ConvertToWideStr(bpPath.ToString());
+				wchar_t* bpNameWStr = GetBlueprintNameWideStr(bpPath.ToString());
 
-				UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, bpPathWStr, nullptr, 0, 0, true);
+				UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, bpNameWStr, nullptr, 0, 0, true);
 				if (object)
 				{
 					TSubclassOf<UPrimalItem> archetype;
@@ -116,7 +116,7 @@ void CustomGiveItem(APlayerController* aPlayerController, FString* cmd, bool bWr
 					SendDirectMessage(aShooterController, L"Successfully spawned item");
 				}
 
-				delete[] bpPathWStr;
+				delete[] bpNameWStr;
 			}
 		}
 	}
@@ -149,34 +149,55 @@ void SpawnTemplate(APlayerController* aPlayerController, FString* cmd, bool bWri
 		int dinoBaseLevelHealth, dinoBaseLevelStamina, dinoBaseLevelOxygen, dinoBaseLevelFood, dinoBaseLevelWeight, dinoBaseLevelMeleeDamage, dinoBaseLevelMovementSpeed;
 		int dinoTamedLevelHealth, dinoTamedLevelStamina, dinoTamedLevelOxygen, dinoTamedLevelFood, dinoTamedLevelWeight, dinoTamedLevelMeleeDamage, dinoTamedLevelMovementSpeed;
 		float saddleArmor;
+		float imprint;
 		int count;
 		float radius;
+		bool follow;
+		bool ignoreAllWhistles;
+		bool ignoreAllyLook;
 		std::list<GiveItemDefinition> items;
 
 		std::string bpPath = templateEntry["blueprint"];
-		std::string bpPathSaddle = templateEntry["saddleBlueprint"];
+		std::string bpPathSaddle = templateEntry.value("saddleBlueprint", std::string());
+
+		std::string aggressionLevelStr = str_tolower(templateEntry.value("aggressionLevel", std::string()));
+		AggressionLevel aggressionLevel = AggressionLevel::Passive;
+		if (aggressionLevelStr.compare("passive") == 0) aggressionLevel = AggressionLevel::Passive;
+		else if (aggressionLevelStr.compare("neutral") == 0) aggressionLevel = AggressionLevel::Neutral;
+		else if (aggressionLevelStr.compare("aggressive") == 0) aggressionLevel = AggressionLevel::Aggressive;
+		else if (aggressionLevelStr.compare("attackmytarget") == 0) aggressionLevel = AggressionLevel::AttackMyTarget;
+
+		std::string facingStr = str_tolower(templateEntry.value("facing", std::string()));
+		FacingDirection facing = FacingDirection::Forward;
+		if (facingStr.compare("forward") == 0) facing = FacingDirection::Forward;
+		else if (facingStr.compare("outwards") == 0) facing = FacingDirection::Outwards;
+		else if (facingStr.compare("inwards") == 0) facing = FacingDirection::Inwards;
 
 		try
 		{
-			saddleArmor = templateEntry["saddleArmor"];
-			dinoBaseLevelHealth = templateEntry["baseLevelHealth"];
-			dinoBaseLevelStamina = templateEntry["baseLevelStamina"];
-			dinoBaseLevelOxygen = templateEntry["baseLevelOxygen"];
-			dinoBaseLevelFood = templateEntry["baseLevelFood"];
-			dinoBaseLevelWeight = templateEntry["baseLevelWeight"];
-			dinoBaseLevelMeleeDamage = templateEntry["baseLevelMeleeDamage"];
-			dinoBaseLevelMovementSpeed = templateEntry["baseLevelMovementSpeed"];
+			saddleArmor = templateEntry.value("saddleArmor", 25.0);
+			imprint = templateEntry.value("imprint", 0.0);
+			dinoBaseLevelHealth = templateEntry.value("baseLevelHealth", 0);
+			dinoBaseLevelStamina = templateEntry.value("baseLevelStamina", 0);
+			dinoBaseLevelOxygen = templateEntry.value("baseLevelOxygen", 0);
+			dinoBaseLevelFood = templateEntry.value("baseLevelFood", 0);
+			dinoBaseLevelWeight = templateEntry.value("baseLevelWeight", 0);
+			dinoBaseLevelMeleeDamage = templateEntry.value("baseLevelMeleeDamage", 0);
+			dinoBaseLevelMovementSpeed = templateEntry.value("baseLevelMovementSpeed", 0);
 
-			dinoTamedLevelHealth = templateEntry["tamedLevelHealth"];
-			dinoTamedLevelStamina = templateEntry["tamedLevelStamina"];
-			dinoTamedLevelOxygen = templateEntry["tamedLevelOxygen"];
-			dinoTamedLevelFood = templateEntry["tamedLevelFood"];
-			dinoTamedLevelWeight = templateEntry["tamedLevelWeight"];
-			dinoTamedLevelMeleeDamage = templateEntry["tamedLevelMeleeDamage"];
-			dinoTamedLevelMovementSpeed = templateEntry["tamedLevelMovementSpeed"];
+			dinoTamedLevelHealth = templateEntry.value("tamedLevelHealth", 0);
+			dinoTamedLevelStamina = templateEntry.value("tamedLevelStamina", 0);
+			dinoTamedLevelOxygen = templateEntry.value("tamedLevelOxygen", 0);
+			dinoTamedLevelFood = templateEntry.value("tamedLevelFood", 0);
+			dinoTamedLevelWeight = templateEntry.value("tamedLevelWeight", 0);
+			dinoTamedLevelMeleeDamage = templateEntry.value("tamedLevelMeleeDamage", 0);
+			dinoTamedLevelMovementSpeed = templateEntry.value("tamedLevelMovementSpeed", 0);
 
-			count = templateEntry["count"];
-			radius = templateEntry["radius"];
+			count = templateEntry.value("count", 1);
+			radius = templateEntry.value("radius", 1000.0);
+			follow = templateEntry.value("follow", false);
+			ignoreAllWhistles = templateEntry.value("ignoreAllWhistles", false);
+			ignoreAllyLook = templateEntry.value("ignoreAllyLook", false);
 
 			auto itemsMap = templateEntry.value("items", nlohmann::json::array());
 			for (auto iter = itemsMap.begin(); iter != itemsMap.end(); ++iter)
@@ -184,8 +205,8 @@ void SpawnTemplate(APlayerController* aPlayerController, FString* cmd, bool bWri
 				auto item = iter.value();
 
 				std::string blueprint = item["blueprint"];
-				int quantity = item["quantity"];
-				int count = item["count"];
+				int quantity = item.value("quantity", 1);
+				int count = item.value("count", 1);
 
 				GiveItemDefinition giveItemDef;
 				giveItemDef.blueprint = blueprint;
@@ -204,16 +225,21 @@ void SpawnTemplate(APlayerController* aPlayerController, FString* cmd, bool bWri
 		bool success = true;
 		for (int i = 0; i < count; i++)
 		{
-			float a = i * 2 * M_PI / count;
+			float a = i * 2 * M_PI / count; //in radians
 			float x = radius * std::cos(a);
 			float y = radius * std::sin(a);
+
+			float f = 0.0; // in degrees
+			if (facing == FacingDirection::Outwards) f = i * 360.0 / count;
+			else if (facing == FacingDirection::Inwards) f = i * 360.0 / count + 180.0;
 
 			bool innerSuccess = SpawnCustomDino(
 				steamId,
 				bpPath, bpPathSaddle,
 				dinoBaseLevelHealth, dinoBaseLevelStamina, dinoBaseLevelOxygen, dinoBaseLevelFood, dinoBaseLevelWeight, dinoBaseLevelMeleeDamage, dinoBaseLevelMovementSpeed,
 				dinoTamedLevelHealth, dinoTamedLevelStamina, dinoTamedLevelOxygen, dinoTamedLevelFood, dinoTamedLevelWeight, dinoTamedLevelMeleeDamage, dinoTamedLevelMovementSpeed,
-				saddleArmor, items, x, y);
+				saddleArmor, imprint, items, x, y, 300, 
+				follow, aggressionLevel, ignoreAllWhistles, ignoreAllyLook, f);
 
 			if (!innerSuccess)
 			{
@@ -362,6 +388,7 @@ void ReloadTestConfig(APlayerController* playerController, FString* cmd, bool sh
 	LoadConfig();
 
 	AShooterPlayerController* aShooterController = static_cast<AShooterPlayerController*>(playerController);
+	SendDirectMessage(aShooterController, L"Test config reloaded!");
 }
 
 void TestFunc(APlayerController* playerController, FString* cmd, bool shouldLog)

@@ -269,6 +269,147 @@
           "quantity": 2
         }
       ]
+    },
+    "manticore_easy": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_01.PrimalItemArtifactSE_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_02.PrimalItemArtifactSE_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_03.PrimalItemArtifactSE_03'"
+          ]
+        },
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_FireWyvern.PrimalItemResource_ApexDrop_FireWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_LightningWyvern.PrimalItemResource_ApexDrop_LightningWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_PoisonWyvern.PrimalItemResource_ApexDrop_PoisonWyvern'"
+          ],
+          "quantity": 2
+        }
+      ]
+    },
+    "manticore_medium": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_01.PrimalItemArtifactSE_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_02.PrimalItemArtifactSE_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_03.PrimalItemArtifactSE_03'"
+          ]
+        },
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_FireWyvern.PrimalItemResource_ApexDrop_FireWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_LightningWyvern.PrimalItemResource_ApexDrop_LightningWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_PoisonWyvern.PrimalItemResource_ApexDrop_PoisonWyvern'"
+          ],
+          "quantity": 10
+        }
+      ]
+    },
+    "manticore_hard": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_01.PrimalItemArtifactSE_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_02.PrimalItemArtifactSE_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifactSE_03.PrimalItemArtifactSE_03'"
+          ]
+        },
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_FireWyvern.PrimalItemResource_ApexDrop_FireWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_LightningWyvern.PrimalItemResource_ApexDrop_LightningWyvern'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_PoisonWyvern.PrimalItemResource_ApexDrop_PoisonWyvern'"
+          ],
+          "quantity": 20
+        }
+      ]
+    },
+    "ragnar_easy": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_05.PrimalItemArtifact_05'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_01.PrimalItemArtifact_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_03.PrimalItemArtifact_03'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_04.PrimalItemArtifact_04'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_07.PrimalItemArtifact_07'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_02.PrimalItemArtifact_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_11.PrimalItemArtifact_11'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_08.PrimalItemArtifact_08'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_06.PrimalItemArtifact_06'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_09.PrimalItemArtifact_09'"
+          ]
+        }
+      ]
+    },
+    "ragnar_medium": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_05.PrimalItemArtifact_05'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_01.PrimalItemArtifact_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_03.PrimalItemArtifact_03'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_04.PrimalItemArtifact_04'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_07.PrimalItemArtifact_07'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_02.PrimalItemArtifact_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_11.PrimalItemArtifact_11'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_08.PrimalItemArtifact_08'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_06.PrimalItemArtifact_06'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_09.PrimalItemArtifact_09'"
+          ]
+        },
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Argentavis.PrimalItemResource_ApexDrop_Argentavis'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Sarco.PrimalItemResource_ApexDrop_Sarco'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Sauro.PrimalItemResource_ApexDrop_Sauro'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Boa.PrimalItemResource_ApexDrop_Boa'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Megalania.PrimalItemResource_ApexDrop_Megalania'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Megalodon.PrimalItemResource_ApexDrop_Megalodon'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Spino.PrimalItemResource_ApexDrop_Spino'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_apexdrop_thylaco.primalitemresource_apexdrop_thylaco'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Basilo.PrimalItemResource_ApexDrop_Basilo'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Tuso.PrimalItemResource_ApexDrop_Tuso'"
+          ],
+          "quantity": 10
+        }
+      ]
+    },
+    "ragnar_hard": {
+      "items": [
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_05.PrimalItemArtifact_05'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_01.PrimalItemArtifact_01'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_03.PrimalItemArtifact_03'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_04.PrimalItemArtifact_04'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_07.PrimalItemArtifact_07'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_02.PrimalItemArtifact_02'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_11.PrimalItemArtifact_11'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_08.PrimalItemArtifact_08'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_06.PrimalItemArtifact_06'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Artifacts/PrimalItemArtifact_09.PrimalItemArtifact_09'"
+          ]
+        },
+        {
+          "blueprints": [
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Argentavis.PrimalItemResource_ApexDrop_Argentavis'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Sarco.PrimalItemResource_ApexDrop_Sarco'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Sauro.PrimalItemResource_ApexDrop_Sauro'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Boa.PrimalItemResource_ApexDrop_Boa'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Megalania.PrimalItemResource_ApexDrop_Megalania'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Megalodon.PrimalItemResource_ApexDrop_Megalodon'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Spino.PrimalItemResource_ApexDrop_Spino'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_apexdrop_thylaco.primalitemresource_apexdrop_thylaco'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Basilo.PrimalItemResource_ApexDrop_Basilo'",
+            "Blueprint'/Game/PrimalEarth/CoreBlueprints/Resources/PrimalItemResource_ApexDrop_Tuso.PrimalItemResource_ApexDrop_Tuso'"
+          ],
+          "quantity": 25
+        }
+      ]
     }
   },
   "Locations": {
@@ -288,8 +429,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Yutyrannus/Yutyrannus_Character_BP.Yutyrannus_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_YutySaddle.PrimalItemArmor_YutySaddle_C",
-      "saddleArmor": 80.0,
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_YutySaddle.PrimalItemArmor_YutySaddle'",
+      "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 30,
       "baseLevelStamina": 30,
       "baseLevelOxygen": 30,
@@ -311,6 +453,7 @@
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Griffin/Griffin_Character_BP.Griffin_Character_BP'",
       "saddleBlueprint": "",
       "saddleArmor": 0.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 35,
       "baseLevelOxygen": 25,
@@ -330,8 +473,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Megalania/Megalania_Character_BP.Megalania_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalaniaSaddle.PrimalItemArmor_MegalaniaSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_MegalaniaSaddle.PrimalItemArmor_MegalaniaSaddle'",
       "saddleArmor": 0.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 35,
       "baseLevelOxygen": 25,
@@ -351,8 +495,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Therizinosaurus/Therizino_Character_BP.Therizino_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -372,8 +517,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Rex/Rex_Character_BP.Rex_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 50,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -393,8 +539,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Thylacoleo/Thylacoleo_Character_BP.Thylacoleo_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ThylacoSaddle.PrimalItemArmor_ThylacoSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ThylacoSaddle.PrimalItemArmor_ThylacoSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 40,
       "baseLevelStamina": 30,
       "baseLevelOxygen": 25,
@@ -414,8 +561,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Baryonyx/Baryonyx_Character_BP.Baryonyx_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_BaryonyxSaddle.PrimalItemArmor_BaryonyxSaddle_C",
-      "saddleArmor": 75.0,
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_BaryonyxSaddle.PrimalItemArmor_BaryonyxSaddle'",
+      "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 40,
       "baseLevelStamina": 40,
       "baseLevelOxygen": 30,
@@ -435,8 +583,9 @@
       "count": 1,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Daeodon/Daeodon_Character_BP.Daeodon_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DaeodonSaddle.PrimalItemArmor_DaeodonSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DaeodonSaddle.PrimalItemArmor_DaeodonSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 40,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -453,7 +602,7 @@
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_Kibble_DodoEgg.PrimalItemConsumable_Kibble_DodoEgg_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_Kibble_DodoEgg.PrimalItemConsumable_Kibble_DodoEgg'",
           "quantity": 100,
           "count": 10
         }
@@ -463,8 +612,9 @@
       "count": 3,
       "radius": 500.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Allosaurus/Allo_Character_BP.Allo_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_AlloSaddle.PrimalItemArmor_AlloSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_AlloSaddle.PrimalItemArmor_AlloSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -486,6 +636,7 @@
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Dimorphodon/Dimorph_Character_BP.Dimorph_Character_BP'",
       "saddleBlueprint": "",
       "saddleArmor": 0.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -507,6 +658,7 @@
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Bat/Bat_Character_BP.Bat_Character_BP'",
       "saddleBlueprint": "",
       "saddleArmor": 0.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -528,6 +680,7 @@
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Troodon/Troodon_Character_BP.Troodon_Character_BP'",
       "saddleBlueprint": "",
       "saddleArmor": 0.0,
+      "imprint": 1.0,
       "baseLevelHealth": 35,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -543,39 +696,19 @@
       "tamedLevelMeleeDamage": 15,
       "tamedLevelMovementSpeed": 0
     },
-    "rex_boss_video": {
-      "count": 10,
-      "radius": 1000.0,
-      "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Rex/Rex_Character_BP.Rex_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C",
-      "saddleArmor": 80.0,
-      "baseLevelHealth": 40,
-      "baseLevelStamina": 30,
-      "baseLevelOxygen": 30,
-      "baseLevelFood": 30,
-      "baseLevelWeight": 30,
-      "baseLevelMeleeDamage": 40,
-      "baseLevelMovementSpeed": 30,
-      "tamedLevelHealth": 13,
-      "tamedLevelStamina": 0,
-      "tamedLevelOxygen": 0,
-      "tamedLevelFood": 0,
-      "tamedLevelWeight": 0,
-      "tamedLevelMeleeDamage": 27,
-      "tamedLevelMovementSpeed": 0
-    },
-    "rex_boss_5062": {
+    "rex_boss": {
       "count": 19,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Rex/Rex_Character_BP.Rex_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C",
-      "saddleArmor": 95.0,
-      "baseLevelHealth": 50,
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle'",
+      "saddleArmor": 85.0,
+      "imprint": 1.0,
+      "baseLevelHealth": 45,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
       "baseLevelFood": 25,
       "baseLevelWeight": 25,
-      "baseLevelMeleeDamage": 62,
+      "baseLevelMeleeDamage": 45,
       "baseLevelMovementSpeed": 25,
       "tamedLevelHealth": 14,
       "tamedLevelStamina": 0,
@@ -585,67 +718,48 @@
       "tamedLevelMeleeDamage": 35,
       "tamedLevelMovementSpeed": 0
     },
-    "rex_boss_5062-2": {
-      "count": 19,
-      "radius": 1000.0,
-      "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Rex/Rex_Character_BP.Rex_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_RexSaddle.PrimalItemArmor_RexSaddle_C",
-      "saddleArmor": 100.0,
-      "baseLevelHealth": 255,
-      "baseLevelStamina": 25,
-      "baseLevelOxygen": 25,
-      "baseLevelFood": 25,
-      "baseLevelWeight": 25,
-      "baseLevelMeleeDamage": 50,
-      "baseLevelMovementSpeed": 25,
-      "tamedLevelHealth": 50,
-      "tamedLevelStamina": 0,
-      "tamedLevelOxygen": 0,
-      "tamedLevelFood": 0,
-      "tamedLevelWeight": 0,
-      "tamedLevelMeleeDamage": 0,
-      "tamedLevelMovementSpeed": 0
-    },
-    "theriz_boss_45-2": {
+    "theriz_boss": {
       "count": 19,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Therizinosaurus/Therizino_Character_BP.Therizino_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle_C",
-      "saddleArmor": 100.0,
-      "baseLevelHealth": 40,
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle'",
+      "saddleArmor": 85.0,
+      "imprint": 1.0,
+      "baseLevelHealth": 45,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
       "baseLevelFood": 25,
       "baseLevelWeight": 25,
-      "baseLevelMeleeDamage": 60,
+      "baseLevelMeleeDamage": 45,
       "baseLevelMovementSpeed": 25,
       "tamedLevelHealth": 21,
       "tamedLevelStamina": 0,
       "tamedLevelOxygen": 0,
       "tamedLevelFood": 0,
       "tamedLevelWeight": 0,
-      "tamedLevelMeleeDamage": 35,
+      "tamedLevelMeleeDamage": 23,
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake'",
           "quantity": 5,
           "count": 10
         }
       ]
     },
-    "theriz_boss_45": {
+    "theriz_boss_lowhp": {
       "count": 19,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Therizinosaurus/Therizino_Character_BP.Therizino_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 15,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
       "baseLevelFood": 25,
       "baseLevelWeight": 25,
-      "baseLevelMeleeDamage": 65,
+      "baseLevelMeleeDamage": 45,
       "baseLevelMovementSpeed": 25,
       "tamedLevelHealth": 0,
       "tamedLevelStamina": 0,
@@ -656,18 +770,19 @@
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake'",
           "quantity": 5,
           "count": 10
         }
       ]
     },
-    "daeodon_boss_40": {
-      "count": 10,
+    "daeodon_boss": {
+      "count": 19,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Daeodon/Daeodon_Character_BP.Daeodon_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DaeodonSaddle.PrimalItemArmor_DaeodonSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_DaeodonSaddle.PrimalItemArmor_DaeodonSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 15,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -684,18 +799,19 @@
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_Kibble_DodoEgg.PrimalItemConsumable_Kibble_DodoEgg_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_Kibble_DodoEgg.PrimalItemConsumable_Kibble_DodoEgg'",
           "quantity": 100,
           "count": 10
         }
       ]
     },
-    "chali_boss_45": {
-      "count": 20,
+    "chali_boss": {
+      "count": 19,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Chalicotherium/Chalico_Character_BP.Chalico_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ChalicoSaddle.PrimalItemArmor_ChalicoSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_ChalicoSaddle.PrimalItemArmor_ChalicoSaddle'",
       "saddleArmor": 85.0,
+      "imprint": 1.0,
       "baseLevelHealth": 45,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -712,7 +828,7 @@
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake'",
           "quantity": 5,
           "count": 10
         }

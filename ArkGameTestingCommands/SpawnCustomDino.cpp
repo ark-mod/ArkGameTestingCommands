@@ -6,14 +6,22 @@ bool SpawnCustomDino(
 	int dinoBaseLevelHealth, int dinoBaseLevelStamina, int dinoBaseLevelOxygen, int dinoBaseLevelFood, int dinoBaseLevelWeight, int dinoBaseLevelMeleeDamage, int dinoBaseLevelMovementSpeed,
 	int dinoTamedLevelHealth, int dinoTamedLevelStamina, int dinoTamedLevelOxygen, int dinoTamedLevelFood, int dinoTamedLevelWeight, int dinoTamedLevelMeleeDamage, int dinoTamedLevelMovementSpeed,
 	float saddleArmor,
+	float imprint,
 	std::list<GiveItemDefinition> items,
-	float offsetX, float offsetY, float offsetZ)
+	float offsetX, float offsetY, float offsetZ, 
+	bool follow, 
+	AggressionLevel aggressionLevel, 
+	bool ignoreAllWhistles, 
+	bool ignoreAllyLook,
+	float facingModDegrees)
 {
+	if (bpPath.empty()) return false;
+
 	AShooterPlayerController* aShooterPC = FindPlayerControllerFromSteamId(steamId);
 	if (aShooterPC)
 	{
-		std::wstring bpPathWStr = ConvertToWideStr(bpPath);
-		FString bpPathFString(bpPathWStr);
+		//todo: does FString release the underlying wchar_t*?
+		FString bpPathFString = GetBlueprintPathFString(bpPath);
 
 		//todo: raycast position (?)
 		//UWorld* world = Ark::GetWorld();
@@ -25,6 +33,13 @@ bool SpawnCustomDino(
 		if (actor && actor->IsA(APrimalDinoCharacter::GetPrivateStaticClass()))
 		{
 			APrimalDinoCharacter* dino = static_cast<APrimalDinoCharacter*>(actor);
+
+			if (facingModDegrees > 0.0)
+			{
+				FRotator rot = dino->GetRootComponentField()->GetRelativeRotationField();
+				rot.Yaw += facingModDegrees;
+				dino->SetActorRotation(&rot);
+			}
 
 			dino->SetAbsoluteBaseLevelField(1); //temp set to 1 in order to avoid random level assignment
 
@@ -53,7 +68,17 @@ bool SpawnCustomDino(
 
 			dino->BeginPlay();
 
-			dino->SetTamedFollowTargetField(TWeakObjectPtr<AActor>());
+			//option: follow
+			if (!follow) dino->SetTamedFollowTargetField(TWeakObjectPtr<AActor>());
+
+			//option: aggression level
+			dino->SetTamedAggressionLevelField(static_cast<int>(aggressionLevel));
+
+			//option: ignore all whistles
+			if (ignoreAllWhistles) dino->SetbIgnoreAllWhistlesField(true);
+
+			//option: ignore ally look
+			if (ignoreAllyLook) dino->SetbIgnoreAllyLookField(true);
 
 			UPrimalCharacterStatusComponent* status = dino->GetMyCharacterStatusComponentField();
 			if (status)
@@ -97,7 +122,11 @@ bool SpawnCustomDino(
 					+ dinoTamedLevelMeleeDamage 
 					+ dinoTamedLevelMovementSpeed);
 
-				dino->GetMyCharacterStatusComponentField()->AddExperience(status->GetExperienceRequiredForPreviousLevelUp(), false, EXPType::XP_GENERIC);
+				
+				//NOTE: better to set the actual xp because this call gets scaled by configuration settings for different xp types (generic by default is 2x)
+				//dino->GetMyCharacterStatusComponentField()->AddExperience(status->GetExperienceRequiredForPreviousLevelUp(), false, EXPType::XP_GENERIC);
+				
+				status->SetExperiencePointsField(status->GetExperienceRequiredForPreviousLevelUp());
 
 				char* statsTamed = status->GetNumberOfLevelUpPointsAppliedTamedField();
 				statsTamed[0] = dinoTamedLevelHealth;
@@ -109,6 +138,8 @@ bool SpawnCustomDino(
 				statsTamed[9] = dinoTamedLevelMovementSpeed;
 
 				//status->SetNumberOfLevelUpPointsAppliedTamedField(stats);
+
+				status->SetbInitializedBaseLevelMaxStatusValuesField(true);
 			}
 
 			//add saddle
@@ -131,7 +162,8 @@ bool SpawnCustomDino(
 
 			if (!bpPathSaddle.empty())
 			{
-				std::wstring bpPathSaddleWStr = ConvertToWideStr(bpPathSaddle);
+				std::wstring bpPathSaddleWStr = GetBlueprintNameWideStr(bpPathSaddle);
+
 				UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, bpPathSaddleWStr.c_str(), nullptr, 0, 0, true);
 
 				if (object && ((object->GetClassField()->GetClassCastFlagsField() >> 5) & 1))
@@ -154,7 +186,7 @@ bool SpawnCustomDino(
 				//give items
 				for (std::list<GiveItemDefinition>::iterator it = items.begin(); it != items.end(); ++it)
 				{
-					std::wstring itemBlueprint = ConvertToWideStr(it->blueprint);
+					std::wstring itemBlueprint = GetBlueprintNameWideStr(it->blueprint);
 					UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, itemBlueprint.c_str(), nullptr, 0, 0, true);
 					if (object)
 					{
@@ -184,17 +216,24 @@ bool SpawnCustomDino(
 				0i64);*/
 			}
 
+			if (imprint > 0.0)
+			{
+				long long playerId = aShooterPC->GetLinkedPlayerIDField();
+				FString* playerName2 = new FString();
+				aShooterPC->GetPlayerCharacterName(playerName2);
 
-			long long playerId = aShooterPC->GetLinkedPlayerIDField();
-			FString* playerName2 = new FString();
-			aShooterPC->GetPlayerCharacterName(playerName2);
+				dino->UpdateImprintingDetails(playerName2, playerId);
+				//todo: memory leak? playerName2 not deleted
+				dino->UpdateImprintingQuality(imprint > 1.0 ? 1.0 : imprint);
+			}
+			else
+			{
+				dino->UpdateImprintingQuality(0.0);
+			}
 
-			dino->UpdateImprintingDetails(playerName2, playerId);
-			//todo: memory leak? playerName2 not deleted
-			dino->UpdateImprintingQuality(1.0);
-
-			dino->UpdateStatusComponent(0.0);
-			dino->ForceNetUpdate(false);
+			//NOTE: had these before for unknown reasons, but appears to not be required anymore (another way to update base/max stats is to call: status->RescaleAllStats();)
+			//dino->UpdateStatusComponent(0.0);
+			//dino->ForceNetUpdate(false);
 
 			if (status)
 			{
@@ -207,8 +246,10 @@ bool SpawnCustomDino(
 				float* maxStatsValues = status->GetMaxStatusValuesField();
 				float wildRandomScale = dino->GetWildRandomScaleField();
 				float* currentStatValues = status->GetCurrentStatusValuesField();
-				currentStatValues[0] = maxStatsValues[0]; // maxStatsValues[0] * wildRandomScale;
-				currentStatValues[4] = maxStatsValues[4];
+				currentStatValues[0] = maxStatsValues[0]; //health (calculated as maxStatsValues[0] * wildRandomScale; in server code)
+				currentStatValues[1] = maxStatsValues[1]; //stamina
+				currentStatValues[3] = maxStatsValues[3]; //oxygen
+				currentStatValues[4] = maxStatsValues[4]; //food
 
 				/*v5->MaxStatusValues[2] = (float)((float)(*((float *)&v29 + 2) * v5->TheMaxTorporIncreasePerBaseLevel)
 				* (float)(v5->BaseCharacterLevel - 1))

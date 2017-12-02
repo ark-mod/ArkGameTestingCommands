@@ -16,22 +16,9 @@ bool GiveCustomItems(
 
 			for (std::list<std::string>::iterator it2 = blueprints.begin(); it2 != blueprints.end(); ++it2)
 			{
-				std::wstring itemBlueprint = ConvertToWideStr(*it2);
+				std::wstring itemName = GetBlueprintNameWideStr(*it2);
 
-				//remove "Blueprint'" from start
-				std::wstring rBp = L"Blueprint'";
-				size_t fBp = itemBlueprint.find(rBp);
-				if (fBp == 0) itemBlueprint.replace(fBp, rBp.length(), L"");
-
-				//remove ending single quote
-				std::wstring rQ = L"'";
-				size_t fQ = itemBlueprint.rfind(rQ);
-				if (fQ == itemBlueprint.length() - 1) itemBlueprint.replace(fQ, rQ.length(), L"");
-
-				//append _C if missing
-				if (!(itemBlueprint.rfind(L"_C") == itemBlueprint.length() - 2 || itemBlueprint.rfind(L"_c") == itemBlueprint.length() - 2)) itemBlueprint.append(L"_C");
-
-				UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, itemBlueprint.c_str(), nullptr, 0, 0, true);
+				UObject* object = Globals::StaticLoadObject(UObject::StaticClass(), nullptr, itemName.c_str(), nullptr, 0, 0, true);
 				if (object && ((object->GetClassField()->GetClassCastFlagsField() >> 5) & 1))
 				{
 					TSubclassOf<UPrimalItem> archetype;

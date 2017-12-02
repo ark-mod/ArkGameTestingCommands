@@ -1,6 +1,10 @@
 # ARK Beyond API: ARK Game Testing Commands (Plugin)
 
-## NOTE
+
+## Notes & Requirements
+
+For the plugin to work correctly you have to use my forked version of Beyond API from https://github.com/tsebring/ARK-Server-Beyond-API.
+
 This plugin is not stable and not meant for use on a persistent server. It is meant for testing only.
 
 ## Introduction
@@ -57,8 +61,14 @@ Example: `ReloadTestConfig`
       "count": 20,
       "radius": 1000.0,
       "blueprint": "Blueprint'/Game/PrimalEarth/Dinos/Therizinosaurus/Therizino_Character_BP.Therizino_Character_BP'",
-      "saddleBlueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle_C",
+      "saddleBlueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Armor/Saddles/PrimalItemArmor_TherizinosaurusSaddle.PrimalItemArmor_TherizinosaurusSaddle'",
       "saddleArmor": 100.0,
+      "imprint": 1.0,
+      "ignoreAllWhistles": false,
+      "ignoreAllyLook": false,
+      "follow": false,
+      "aggressionLevel": "passive",
+      "facing": "outwards",
       "baseLevelHealth": 45,
       "baseLevelStamina": 25,
       "baseLevelOxygen": 25,
@@ -75,7 +85,7 @@ Example: `ReloadTestConfig`
       "tamedLevelMovementSpeed": 0,
       "items": [
         {
-          "blueprint": "/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake_C",
+          "blueprint": "Blueprint'/Game/PrimalEarth/CoreBlueprints/Items/Consumables/PrimalItemConsumable_SweetVeggieCake.PrimalItemConsumable_SweetVeggieCake'",
           "quantity": 5,
           "count": 10
         }
@@ -84,6 +94,13 @@ Example: `ReloadTestConfig`
   }
 }
 ```
+
+## Spawn template options
+
+| Option | Values | Default |
+| --- | --- | --- |
+| **aggressionLevel** | passive, neutral, aggressive, attackmytarget | passive |
+| **facing** | forward, outwards, inwards | forward |
 
 ## Acknowledgements
 
