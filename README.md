@@ -1,22 +1,16 @@
-# ARK Beyond API: ARK Game Testing Commands (Plugin)
-
-
-## Notes & Requirements
-
-For the plugin to work correctly you have to use my forked version of Beyond API from https://github.com/tsebring/ARK-Server-Beyond-API.
-
-This plugin is not stable and not meant for use on a persistent server. It is meant for testing only.
+# ARK Server API: ARK Game Testing Commands (Plugin)
 
 ## Introduction
 
-This mod facilitates a lot of advanced testing of creatures, bosses, items, caves etc. It should be used on a private dedicated server.
-
-Additionally, it serves as my testbed for features, data dumping, and analysis of server code in general.
+This mod facilitates a lot of advanced testing of creatures, bosses, items, caves etc.
 
 Chat
 * **/health**: Prints a summary report of nearby tamed dinos health status.
 
 Console
+* **health**: Prints a summary report of nearby tamed dinos health status (via notification).
+Example: `Health`
+
 * **SpawnTemplate `<template key>`**: Spawn custom templated dinos defined in config.json.
 Example: `SpawnTemplate griffin`
 
@@ -26,8 +20,8 @@ Example: `ItemTemplate flak`
 * **TeleportTo `<location key>`**: Teleport to a custom location defined in config.json.
 Example: `TeleportTo redobi`
 
-* **ReloadTestConfig**: Reload updated templates from config.json.
-Example: `ReloadTestConfig`
+* **ArkGameTestingCommands.ReloadConfig**: Reload updated templates and settings from config.json.
+Example: `ArkGameTestingCommands.ReloadConfig`
 
 ## Configuration
 
@@ -104,12 +98,12 @@ Example: `ReloadTestConfig`
 
 ## Acknowledgements
 
-This plugin is based on Michidu's work on Ark-Server-Plugins and ARK Beyond API. The basic plumbing code is copied directly from those plugins.
+This plugin is based on Michidu's work on Ark-Server-Plugins and ARK Server API. The basic plumbing code is copied directly from those plugins.
 
 ## Links
 
-My ARK Beyond API Fork (https://github.com/tsebring/ARK-Server-Beyond-API)
+ARK Server API (http://arkserverapi.com)
 
-ARK Beyond API by Michidu (https://github.com/Michidu/ARK-Server-Beyond-API)
+ARK Server API [GitHub] (https://github.com/Michidu/ARK-Server-API)
 
-Ark-Server-Plugins (https://github.com/Michidu/Ark-Server-Plugins)
+Ark-Server-Plugins [GitHub] (https://github.com/Michidu/Ark-Server-Plugins)
