@@ -1,5 +1,9 @@
 # ARK Server API: ARK Game Testing Commands (Plugin)
 
+## Contributions
+
+This plugin needs a new primary maintainer. If anyone wants to volunteer just let me know.
+
 ## Introduction
 
 This mod facilitates a lot of advanced testing of creatures, bosses, items, caves etc.
